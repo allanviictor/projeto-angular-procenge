@@ -1,0 +1,48 @@
+<app-template>
+
+	<div class="row d-flex justify-content-center mb-5">
+		<div class="col-6 d-flex">
+			<input placeholder="Pesquisar Cliente" class="form-control " [(ngModel)]="cliente.nome" type="text">
+		</div>
+		<div class="col-auto">
+			<button (click)="pesquisar()" color="primary" mat-raised-button class="d-block">Pesquisar</button>
+		</div>
+
+	</div>
+
+	<div class="row mb-5">
+		<div class="col-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>CODIGO</th>
+						<th>NOME</th>
+						<th>ENDEREÇO</th>
+						<th>CIDADE</th>
+						<th>CEP</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let cliente of listaClientes">
+						<td>
+							<input (change)="selecionarCliente(cliente)" name="cliente" type="radio">
+						</td>
+						<td>{{cliente.codigo}}</td>
+						<td>{{cliente.nome}}</td>
+						<td>{{cliente.endereco}}</td>
+						<td>{{cliente.cidade}}</td>
+						<td>{{cliente.cep}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-12 d-flex">
+			<button (click)="incluir()" color="primary" mat-raised-button  class="mr-3 d-block">Incluir</button>
+			<button (click)="alterar()" color="primary" mat-raised-button class="mr-3 d-block">Alterar</button>
+			<button (click)="excluir()" color="primary" mat-raised-button class="mr-3 d-block">Excluir</button>
+		</div>
+	</div>
+
+
+</app-template>

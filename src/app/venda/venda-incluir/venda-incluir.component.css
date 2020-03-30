@@ -1,0 +1,20 @@
+.table tbody+tbody{
+	border-top: none
+}
+
+.table th {
+	border-top: none;
+}
+
+.table thead th{
+	border-bottom: none;
+}
+
+tr {
+	border: 1px solid #dee2e6;
+	transition: all ease-in-out 300ms;
+	background: #fff;
+}
+
+
+

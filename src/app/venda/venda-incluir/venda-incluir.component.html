@@ -1,0 +1,85 @@
+<app-template>
+
+
+	<div class="row">
+		<div class="col-12">
+
+			<div class="card mb-5">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-12">
+							<p class=" display-4">Vendas Incluir</p>
+						</div>
+						<div class="col-12">
+							<label for="">Codigo:</label>
+							<input [(ngModel)]="venda.codigo" class="form-control" type="number"  autocomplete="off">
+						</div>
+						<div class="col-6 mt-3">
+							<label for="">Cliente:</label>
+							<select [(ngModel)]="venda.cliente" class="form-control" >
+								<option *ngFor="let cliente of listaClientes">{{cliente.nome}}</option>
+							</select>
+						</div>
+						<div class="col-6 mt-3">
+							<label for="">Data:</label>
+							<input [(ngModel)]="venda.data" class="form-control" type="date">
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-12">
+
+					<div class="card mb-5">
+						<div class="card-body">
+							<h3 style="font-size: 25px; ">Adicionar Produto</h3>
+							<div class="row">
+								<div class="col-6">
+									<label for="">Produto:</label>
+									<select  [(ngModel)]="listavendaItem.produto" class="form-control">
+										<option [ngValue]="produto" *ngFor="let produto of listaProdutos">
+											{{produto.nome}}
+										</option>
+									</select>
+								</div>
+								<div class="col-6">
+									<label>Quantidade:</label>
+									<input [(ngModel)]="listavendaItem.quantidade" class="form-control" type="text">
+								</div>
+								<div class="col-12 mt-3">
+									<button (click)="adicionarProduto()" color="primary" mat-raised-button mat-button type="submit" class=" d-block">Adicionar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>PRODUTO</th>
+								<th>QUANTIDADE</th>
+								<th>REMOVER</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let produto of listaVendaProduto">
+								<td style="padding-top: 20px;">{{produto.produto.nome}}</td>
+								<td style="padding-top: 20px;">{{produto.quantidade}}</td>
+								<td>
+									<button (click)="remover(produto)" color="primary" mat-raised-button class="d-block">X</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-12 d-flex mt-3 mb-5">
+					<button (click)="incluirVenda()" color="primary" mat-raised-button type="submit" class="mr-3 d-block">Incluir</button>
+					<button (click)="voltar()" color="primary" mat-raised-button mat-button type="submit" class=" d-block">Voltar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</app-template>

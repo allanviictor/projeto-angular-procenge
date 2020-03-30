@@ -1,0 +1,46 @@
+
+
+<nav class="navbar navbar-expand-lg ">
+	<img class="img-background" src="./assets/imgs/bg-nav.jpg">
+	<div class="div-mask"></div>
+	<div class="container">
+
+		<a class="navbar-brand">
+			<img class="logo-procenge" src="./assets/imgs/logo-angular.png">
+		</a>
+		<div id="my-nav" class="collapse navbar-collapse d-flex flex-fill">
+			<ul class="navbar-nav ml-auto ">
+				<li [routerLink]="['/cliente']" class="nav-item mx-2">
+					<button class="nav-link rota-ativa w-100" mat-button>
+						<img class="icon-menu" src="./assets/imgs/rating.svg">
+						Cliente
+					</button>
+				</li>
+				<li [routerLink]="['/produto']" class="nav-item mx-2">
+					<button class="nav-link rota-ativa w-100" mat-button>
+						<img class="icon-menu" src="./assets/imgs/new-product.svg">
+						Produto
+					</button>
+				</li>
+				<li [routerLink]="['/venda']" class="nav-item mx-2">
+					<button class="nav-link rota-ativa w-100"  mat-button>
+						<img class="icon-menu" src="./assets/imgs/shopping-bag.svg">
+						Vendas
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="container mt-5">
+
+	<ng-content></ng-content>
+</div>
+
+
+
+
+
+
+

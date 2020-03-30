@@ -1,0 +1,46 @@
+<app-template>
+
+	<!-- " -->
+	<div class="row d-flex justify-content-center align-items-center mb-5">
+		<div class="col-6">
+			<!-- <label>Cliente:</label> -->
+			<select (change)="alterandoSelect(venda)" class="form-control" [(ngModel)]="venda.cliente">
+				<option selected  [ngValue]="null">Selecione</option>
+				<option *ngFor="let cliente of listaClientes" [ngValue]="cliente">
+					{{cliente.nome}}
+				</option>
+			</select>
+		</div>
+		<div class="col-auto">
+			<button (click)="pesquisarVenda()" color="primary" mat-raised-button class="d-block">Pesquisar</button>
+		</div>
+	</div>
+
+	<div class="row mb-5">
+		<div class="col-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>CODIGO</th>
+						<th>NOME</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let venda of listaVendas">
+						<td>
+							<input (change)="selecionandoVenda(venda)" name="venda" type="radio">
+						</td>
+						<td>{{venda.codigo}}</td>
+						<td>{{venda.cliente.nome}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-12 d-flex">
+			<button (click)="incluir()" color="primary" mat-raised-button  class="mr-3 d-block">Incluir</button>
+			<button (click)="excluirVenda()" color="primary" mat-raised-button class="mr-3 d-block">Excluir</button>
+		</div>
+	</div>
+
+</app-template>

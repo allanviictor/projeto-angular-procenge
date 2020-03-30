@@ -1,0 +1,57 @@
+<app-template>
+
+
+	<div class="row">
+		<div class="col-12">
+			<div *ngIf="mensagem" class="alert alert-success py-4" style="color: #155724;font-weight: 300;font-size: 30px;" role="alert">
+				<p class="m-0">{{mensagem}}</p>
+			</div>
+		</div>
+		<div class="card mb-5">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12">
+						<p class=" display-4">{{acao}} Cliente</p>
+					</div>
+					<div class="col-4">
+						<label for="">Codigo</label>
+						<input class="form-control" [(ngModel)]="cliente.codigo" type="number"  autocomplete="off">
+					</div>
+					<div class="col-4">
+						<label for="">Nome</label>
+						<input class="form-control" [(ngModel)]="cliente.nome" type="text"  autocomplete="off">
+					</div>
+					<div class="col-4">
+						<label for="">Endereço</label>
+						<input class="form-control" [(ngModel)]="cliente.endereco" type="text"  autocomplete="off">
+					</div>
+					<div class="col-4  mt-3">
+						<label for="">Cidade</label>
+						<input class="form-control" [(ngModel)]="cliente.cidade" type="text"  autocomplete="off">
+					</div>
+					<div class="col-4  mt-3">
+						<label for="">CEP</label>
+						<input class="form-control" [(ngModel)]="cliente.cep" type="text"  autocomplete="off">
+					</div>
+					<div class="col-4  mt-3">
+						<label for="">UF</label>
+						<input class="form-control" [(ngModel)]="cliente.uf" type="text"  autocomplete="off">
+					</div>
+					<div class="col-4 mt-3">
+						<label for="">Telefone</label>
+						<input class="form-control" [(ngModel)]="cliente.telefone" type="text"  autocomplete="off">
+					</div>
+					<div class="col-12 d-flex mt-3">
+						<button *ngIf="acao == 'incluir'" color="primary" mat-raised-button (click)="onSubmit()"  type="submit" class="mr-3 d-block">Incluir</button>
+
+						<button *ngIf="acao == 'alterar'" color="primary" mat-raised-button (click)="alterarCliente()"  type="submit" class="mr-3 d-block">Alterar</button>
+
+
+						<button color="primary" mat-raised-button mat-button type="submit" (click)="voltar()" class=" d-block">Voltar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</app-template>

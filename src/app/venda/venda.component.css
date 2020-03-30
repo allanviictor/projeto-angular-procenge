@@ -1,0 +1,29 @@
+.table tbody+tbody{
+	border-top: none
+}
+
+.table th {
+	border-top: none;
+}
+
+.table thead th{
+	border-bottom: none;
+}
+
+tr {
+	border: 1px solid #dee2e6;
+	transition: all ease-in-out 300ms;
+	background: #fff;
+}
+
+tbody tr{
+	cursor: pointer;
+}
+
+tbody tr:hover{
+	background: #fff;
+	box-shadow: 0 1px 3px 0 rgba(32,33,36,.28);
+	transform: scale(1.1);
+	border: none;
+	transition: all ease-in-out 300ms;
+}

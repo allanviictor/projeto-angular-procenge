@@ -1,0 +1,52 @@
+<app-template>
+	<div class="row">
+
+		<div class="col-12">
+			<div *ngIf="mensagem" class="alert alert-success py-4" style="color: #155724;font-weight: 300;font-size: 30px;" role="alert">
+				<p class="m-0">{{mensagem}}</p>
+			</div>
+		</div>
+
+		<div class="col-12">
+			<div class="card mb-5">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-12">
+							<p class=" display-4">{{acao}} Produto</p>
+						</div>
+						<div class="col-4">
+							<label for="">Codigo</label>
+							<input class="form-control" [(ngModel)]="produto.codigo" type="text"  autocomplete="off">
+						</div>
+						<div class="col-4">
+							<label for="">Nome</label>
+							<input class="form-control" [(ngModel)]="produto.nome" type="text"  autocomplete="off">
+						</div>
+						<div class="col-4">
+							<label for="">descricao</label>
+							<input class="form-control" [(ngModel)]="produto.descricao" type="text"  autocomplete="off">
+						</div>
+						<div class="col-4  mt-3">
+							<label for="">valor</label>
+							<input class="form-control" [(ngModel)]="produto.valor" type="text"  autocomplete="off">
+						</div>
+						<div class="col-4  mt-3">
+							<label for="">observacao</label>
+							<input class="form-control" [(ngModel)]="produto.observacao" type="text"  autocomplete="off">
+						</div>
+
+
+						<div class="col-12 d-flex mt-3">
+							<button *ngIf="acao == 'incluir'" color="primary" mat-raised-button (click)="onSubmit()"  type="submit" class="mr-3 d-block">Incluir</button>
+
+							<button *ngIf="acao == 'alterar'" color="primary" mat-raised-button (click)="alterarCliente()"  type="submit" class="mr-3 d-block">Alterar</button>
+
+
+							<button color="primary" mat-raised-button mat-button (click)="voltar()" class=" d-block">Voltar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</app-template>

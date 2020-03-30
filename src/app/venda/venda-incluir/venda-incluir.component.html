@@ -12,12 +12,12 @@
 						</div>
 						<div class="col-12">
 							<label for="">Codigo:</label>
-							<input [(ngModel)]="venda.codigo" class="form-control" type="number"  autocomplete="off">
+							<input [(ngModel)]="venda.codigo" class="form-control" type="text"  autocomplete="off">
 						</div>
 						<div class="col-6 mt-3">
 							<label for="">Cliente:</label>
 							<select [(ngModel)]="venda.cliente" class="form-control" >
-								<option *ngFor="let cliente of listaClientes">{{cliente.nome}}</option>
+								<option [ngValue]="cliente" *ngFor="let cliente of listaClientes">{{cliente.nome}}</option>
 							</select>
 						</div>
 						<div class="col-6 mt-3">

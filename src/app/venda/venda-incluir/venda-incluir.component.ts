@@ -10,7 +10,7 @@ import { VendaService } from '../../services/venda.service'
 
 //models
 import { Produto } from '../../models/produto.model'
-import { ListaVendaItem } from '../../models/listaVendaItem.model'
+import { listaVentaItem } from '../../models/listaVendaItem.model'
 import { Venda } from '../../models/venda.model'
 import { Cliente } from '../../models/cliente.model'
 
@@ -23,13 +23,13 @@ export class VendaIncluirComponent implements OnInit {
 
 	// instancias
 	produto: Produto = new Produto()
-	listavendaItem: ListaVendaItem = new ListaVendaItem()
+	listavendaItem: listaVentaItem = new listaVentaItem()
 	venda: Venda = new Venda();
 	cliente: Cliente = new Cliente();
 
 	// listas
 	listaProdutos: Produto[] = [];
-	listaVendaProduto: ListaVendaItem[] = []
+	listaVendaProduto: listaVentaItem[] = []
 	listaClientes: Cliente[] = [];
 
 
@@ -55,9 +55,8 @@ export class VendaIncluirComponent implements OnInit {
 	adicionarProduto(){
 		this.listavendaItem.codigo = this.listavendaItem.produto.codigo
 		this.listaVendaProduto.push(this.listavendaItem)
-		this.venda.listaVendaItem = this.listaVendaProduto
-		console.log(this.venda)
-		this.listavendaItem = new ListaVendaItem()
+		this.venda.listaVentaItem = this.listaVendaProduto
+		this.listavendaItem = new listaVentaItem()
 
 	}
 
